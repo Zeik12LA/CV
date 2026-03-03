@@ -20,9 +20,10 @@
         /* ===== NAVEGACIÓN (SIDEBAR A NAVBAR) ===== */
         .navbar-cv {
             background: #0f172a;
+            z-index: 1000;
         }
 
-        /* Desktop: Comportamiento de Sidebar */
+        /* Desktop: Comportamiento de Sidebar fija a la izquierda */
         @media (min-width: 992px) {
             .navbar-cv {
                 width: 250px;
@@ -44,6 +45,7 @@
         .nav-link:hover {
             background: #6366f1;
             color: white !important;
+            border-radius: 5px;
         }
 
         /* ===== TEXTO JUSTIFICADO ===== */
@@ -60,7 +62,7 @@
             background-size: 400% 400%;
             animation: gradientMove 12s ease infinite;
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
@@ -71,12 +73,13 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 15px;
-            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            object-fit: cover; /* Mantiene la proporción de tu foto */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* ===== SECCIONES ===== */
@@ -90,7 +93,7 @@
 
         .section-title {
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             position: relative;
         }
 
@@ -111,9 +114,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             margin-bottom: 25px;
             transition: transform 0.2s ease;
+            background: white;
         }
 
         .card-custom:hover { transform: translateY(-5px); }
+
+        /* Centrar textos específicos que no deben ir justificados */
+        .text-center-custom { text-align: center; }
 
     </style>
 </head>
@@ -142,15 +149,18 @@
 <div class="main-content">
 
     <section id="inicio" class="header">
-        <img src="https://via.placeholder.com/150" class="profile-img">
+        <img src="foto.jpeg" class="profile-img" alt="Luis Esteban Arellano Gutiérrez">
         <h1 class="fw-bold">Luis Esteban Arellano Gutiérrez</h1>
-        <p class="lead text-center">Egresado en Ciencias de la Computación</p>
+        <p class="lead text-center-custom">Egresado en Ciencias de la Computación</p>
+        <p class="text-center-custom">Aspirante a Analista de Ciberseguridad</p>
     </section>
 
     <section id="perfil" class="section container">
         <h2 class="section-title">Perfil Profesional</h2>
         <p>
-            Egresado de Ciencias de la Computación orientado a resultados, con sólidos fundamentos en lenguajes de programación y arquitectura de sistemas. Con experiencia en proyectos de desarrollo móvil y administración de sistemas, busco dar el siguiente paso en mi carrera profesional enfocándome en la Ciberseguridad. Me motiva el aprendizaje continuo y el desafío de diseñar soluciones tecnológicas seguras y eficientes.
+            Egresado de Ciencias de la Computación orientado a resultados, con sólidos fundamentos en lenguajes de programación y arquitectura de sistemas. 
+            Con experiencia en proyectos de desarrollo móvil y administración de sistemas, busco dar el siguiente paso en mi carrera profesional enfocándome en la Ciberseguridad. 
+            Me motiva el aprendizaje continuo y el desafío de diseñar soluciones tecnológicas seguras y eficientes.
         </p>
     </section>
 
@@ -173,16 +183,16 @@
             </div>
 
             <div class="card card-custom p-4">
-                <h5>Encargado del Auditorio 109 – Facultad de Ciencias de la Computación (BUAP) &lt;2023 - 2024&gt;</h5>
+                <h5>Encargado del Auditorio 109 – BUAP &lt;2023 - 2024&gt;</h5>
                 <p>
-                    Responsable del mantenimiento y administración de 30 equipos de cómputo. Implementación de medidas de protección para evitar modificaciones no autorizadas en credenciales, configuraciones del sistema y programas instalados. Aplicación de controles de acceso, restricciones de usuario, políticas de seguridad y mantenimiento preventivo, asegurando la estabilidad y disponibilidad de los equipos dentro del entorno académico.
+                    Responsable del mantenimiento y administración de 30 equipos de cómputo. Implementación de medidas de protección para evitar modificaciones no autorizadas en credenciales y configuraciones. Aplicación de controles de acceso y políticas de seguridad para asegurar la estabilidad de los equipos.
                 </p>
             </div>
 
             <div class="card card-custom p-4">
                 <h5>Mesero &lt;2025 - Actualidad&gt;</h5>
                 <p>
-                    Brindo atención directa y personalizada a los clientes, garantizando un servicio cordial y eficiente. Me encargo de la toma, organización y priorización de pedidos, asegurando la calidad de los alimentos y tiempos de entrega óptimos en coordinación con el equipo de cocina. Asimismo, realizo el manejo y procesamiento de pagos en efectivo y tarjeta con responsabilidad y precisión.
+                    Brindo atención directa y personalizada a los clientes, garantizando un servicio cordial y eficiente. Me encargo de la toma, organización y priorización de pedidos en coordinación con el equipo de cocina, así como el manejo responsable de pagos.
                 </p>
             </div>
         </div>
@@ -194,19 +204,19 @@
         <div class="row text-center mb-5">
             <div class="col-6 col-md-3 mb-4">
                 <i class="devicon-javascript-plain colored" style="font-size:60px;"></i>
-                <p class="mt-2 fw-semibold text-center">JavaScript</p>
+                <p class="mt-2 fw-semibold text-center-custom">JavaScript</p>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <i class="devicon-java-plain colored" style="font-size:60px;"></i>
-                <p class="mt-2 fw-semibold text-center">Java</p>
+                <p class="mt-2 fw-semibold text-center-custom">Java</p>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <i class="devicon-python-plain colored" style="font-size:60px;"></i>
-                <p class="mt-2 fw-semibold text-center">Python</p>
+                <p class="mt-2 fw-semibold text-center-custom">Python</p>
             </div>
             <div class="col-6 col-md-3 mb-4">
                 <i class="devicon-c-plain colored" style="font-size:60px;"></i>
-                <p class="mt-2 fw-semibold text-center">C</p>
+                <p class="mt-2 fw-semibold text-center-custom">C</p>
             </div>
         </div>
 
@@ -230,11 +240,11 @@
     </section>
 
     <section id="contacto" class="section">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p>Email: luis12arellano.la@gmail.com</p>
-            <p>Celular: +52 2221019820</p>
-            <p>LinkedIn: linkedin.com/in/luis-arellano-5311b83b1</p>
+        <div class="container text-center-custom">
+            <h2 class="section-title" style="text-align: left;">Contacto</h2>
+            <p style="text-align: center;">Email: luis12arellano.la@gmail.com</p>
+            <p style="text-align: center;">Celular: +52 2221019820</p>
+            <p style="text-align: center;">LinkedIn: <a href="https://linkedin.com/in/luis-arellano-5311b83b1" class="text-white">linkedin.com/in/luis-arellano-5311b83b1</a></p>
         </div>
     </section>
 
@@ -243,5 +253,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
